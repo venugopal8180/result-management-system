@@ -1,0 +1,2440 @@
+=== package.json ===
+{
+  "name": "rmsproject",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/jest-dom": "^6.7.0",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^13.5.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-icons": "^5.5.0",
+    "react-router-dom": "^7.8.1",
+    "react-scripts": "5.0.1",
+    "recharts": "^3.1.2",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
+
+=== README.md ===
+# Getting Started with Create React App
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Available Scripts
+
+In the project directory, you can run:
+
+### `npm start`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
+
+### `npm test`
+
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `npm run build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+=== public/index.html ===
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <title>React App</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+  </body>
+</html>
+
+=== public/manifest.json ===
+{
+  "short_name": "React App",
+  "name": "Create React App Sample",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
+
+=== public/robots.txt ===
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Disallow:
+
+=== src/App.css ===
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: white;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.admin-text {
+  color: blue;
+  margin: 0;
+}
+
+.header-right .icon {
+  font-size: 18px;
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+.main-container {
+  display: flex;
+  flex: 1;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background-color: #f5deb3; /* skin color */
+  padding: 20px;
+  height: 100%;
+  transition: width 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
+  overflow-y: auto;
+  box-shadow: 2px 0 6px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-heading {
+  font-weight: bold;
+  margin: 15px 0 5px;
+  color: #333;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: black;
+  display: block;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-link:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  transform: translateX(5px);
+}
+
+.nav-link.active {
+  font-weight: bold;
+  color: blue;
+}
+
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  left: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 70%;
+  background: blue;
+  border-radius: 4px;
+}
+
+/* Sidebar collapsed */
+
+=== src/App.js ===
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import Welcome from "./pages/WelcomePage";
+import Dashboard from "./pages/Dashboard";
+import Students from "./pages/Students";
+import Subjects from "./pages/Subjects";
+import StudentClasses from "./pages/StudentClasses";
+import Result from "./pages/Result";
+import AdminPassword from "./pages/AdminPassword";
+import StudentChangePassword from "./pages/StudentChangePassword";
+import Login from "./pages/Login";
+import Profile from "./pages/Profile";
+import Layout from "./Layout";
+import { DataProvider } from "./context/DataContext";
+
+function App() {
+  return (
+    <DataProvider>
+      <Routes>
+        {/* Welcome Page */}
+        <Route path="/" element={<Welcome />} />
+
+        {/* Login Page */}
+        <Route path="/login" element={<Login />} />
+
+        {/* All routes inside Layout */}
+        <Route path="/" element={<Layout />}>
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="students" element={<Students />} />
+          <Route path="subjects" element={<Subjects />} />
+          <Route path="student-classes" element={<StudentClasses />} />
+          <Route path="result" element={<Result />} />
+          <Route path="admin-password" element={<AdminPassword />} />
+          <Route
+            path="student-password"
+            element={<StudentChangePassword />}
+          />
+          <Route path="profile" element={<Profile />} />
+        </Route>
+      </Routes>
+    </DataProvider>
+  );
+}
+
+export default App;
+
+=== src/Header.jsx ===
+import React, { useState, useContext } from "react";
+import { FaCog, FaBell, FaMinus } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+import { DataContext } from "./context/DataContext";
+
+function Header({ onToggleSidebar }) {
+  const { setCurrentUser, currentUser } = useContext(DataContext);
+  const [showSettings, setShowSettings] = useState(false);
+  const [showNotifications, setShowNotifications] = useState(false);
+  const navigate = useNavigate();
+
+  const toggleSettings = () => {
+    setShowSettings(!showSettings);
+    setShowNotifications(false); // close notifications if open
+  };
+
+  const toggleNotifications = () => {
+    setShowNotifications(!showNotifications);
+    setShowSettings(false); // close settings if open
+  };
+
+  const handleSettingsClick = (action) => {
+    setShowSettings(false); // close dropdown
+    if (action === "profile") {
+      navigate("/profile"); // go to Profile page
+    } else if (action === "changePassword") {
+      navigate(currentUser?.role === "admin" ? "/admin-password" : "/student-password");
+    } else if (action === "logout") {
+      setCurrentUser(null);
+      navigate("/login");
+    }
+  };
+
+  return (
+    <header className="header">
+      <div className="header-left">
+        <h1 className="admin-text">{currentUser?.role === "admin" ? "ADMIN" : "STUDENT"}</h1>
+      </div>
+
+      <div className="header-right">
+        {/* Settings Icon */}
+        <div className="icon-container">
+          <FaCog className="icon" onClick={toggleSettings} title="Settings" />
+          {showSettings && (
+            <div className="dropdown-menu">
+              <p onClick={() => handleSettingsClick("profile")}>Profile</p>
+              <p onClick={() => handleSettingsClick("changePassword")}>Change Password</p>
+              <p onClick={() => handleSettingsClick("logout")}>Logout</p>
+            </div>
+          )}
+        </div>
+
+        {/* Notifications Icon */}
+        <div className="icon-container">
+          <FaBell className="icon" onClick={toggleNotifications} title="Notifications" />
+          {showNotifications && (
+            <div className="dropdown-menu">
+              <p>No new notifications</p>
+            </div>
+          )}
+        </div>
+
+        {/* Minimize Sidebar */}
+        <FaMinus
+          className="icon"
+          onClick={onToggleSidebar}
+          title="Minimize Sidebar"
+        />
+      </div>
+    </header>
+  );
+}
+
+export default Header;
+
+=== src/index.css ===
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+=== src/index.js ===
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import "./index.css";
+import App from "./App";
+import "./App.css";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+);
+
+=== src/Layout.jsx ===
+// Layout.js
+import React, { useState, useContext } from "react";
+import { Outlet, useNavigate } from "react-router-dom";
+import Sidebar from "./Sidebar";
+import Header from "./Header";
+import { DataContext } from "./context/DataContext";
+
+function Layout() {
+  const { currentUser } = useContext(DataContext);
+  const navigate = useNavigate();
+
+  // State to toggle sidebar
+  const [collapsed, setCollapsed] = useState(false);
+
+  const handleToggleSidebar = () => {
+    setCollapsed((prev) => !prev);
+  };
+
+  // If not logged in, redirect to login
+  if (!currentUser) {
+    navigate("/login");
+    return null;
+  }
+
+  return (
+    <div className={`app ${collapsed ? "collapsed" : ""}`}>
+      {/* Pass toggle function to Header */}
+      <Header onToggleSidebar={handleToggleSidebar} />
+      
+      <div className="main-container">
+        {/* Sidebar visible only if not collapsed */}
+        <Sidebar />
+        <main className="content"><Outlet /></main>
+      </div>
+    </div>
+  );
+}
+
+export default Layout;
+
+=== src/main.jsx ===
+
+=== src/setupTests.js ===
+// jest-dom adds custom jest matchers for asserting on DOM nodes.
+// allows you to do things like:
+// expect(element).toHaveTextContent(/react/i)
+// learn more: https://github.com/testing-library/jest-dom
+import '@testing-library/jest-dom';
+
+=== src/Sidebar.jsx ===
+import React, { useContext } from "react";
+import { NavLink } from "react-router-dom";
+import { DataContext } from "./context/DataContext";
+
+function Sidebar() {
+  const { currentUser } = useContext(DataContext);
+
+  const isAdmin = currentUser?.role === "admin";
+
+  return (
+    <aside className="sidebar">
+      <div className="sidebar-section">
+        <h3 className="sidebar-heading">Dash</h3>
+        <ul>
+          <li><NavLink to="/dashboard" className="nav-link">Dashboard</NavLink></li>
+        </ul>
+      </div>
+
+      <div className="sidebar-section">
+        <h3 className="sidebar-heading">Appearance</h3>
+        <ul>
+          {isAdmin && <li><NavLink to="/student-classes" className="nav-link">Student Classes</NavLink></li>}
+          {isAdmin && <li><NavLink to="/subjects" className="nav-link">Subjects</NavLink></li>}
+          {isAdmin && <li><NavLink to="/students" className="nav-link">Students</NavLink></li>}
+          {isAdmin && <li><NavLink to="/result" className="nav-link">Result</NavLink></li>}
+          {isAdmin && <li><NavLink to="/admin-password" className="nav-link">Admin Change Password</NavLink></li>}
+          <li><NavLink to="/profile" className="nav-link">Profile</NavLink></li>
+          <li><NavLink to="/student-password" className="nav-link">Student Change Password</NavLink></li>
+        </ul>
+      </div>
+    </aside>
+  );
+}
+
+export default Sidebar;
+
+=== src/context/DataContext.jsx ===
+import React, { createContext, useState } from "react";
+
+// Create Context
+export const DataContext = createContext();
+
+export const DataProvider = ({ children }) => {
+  // Students
+  const [students, setStudents] = useState([
+    { id: 1, username: "john_doe", email: "john@example.com", avatar: "", password: "john123" },
+    { id: 2, username: "jane_smith", email: "jane@example.com", avatar: "", password: "jane123" },
+    { id: 3, username: "bob_johnson", email: "bob@example.com", avatar: "", password: "bob123" }
+  ]);
+
+  // Subjects
+  const [subjects, setSubjects] = useState([]);
+
+  // Classes
+  const [classes, setClasses] = useState([]);
+
+  // Results
+  const [results, setResults] = useState([]);
+
+  // Passwords
+  const [adminPassword, setAdminPassword] = useState("admin123");
+  const [studentPassword, setStudentPassword] = useState("student123");
+
+  // Current User (null if no one logged in)
+  const [currentUser, setCurrentUser] = useState(null);
+
+  return (
+    <DataContext.Provider
+      value={{
+        students, setStudents,
+        subjects, setSubjects,
+        classes, setClasses,
+        results, setResults,
+        adminPassword, setAdminPassword,
+        studentPassword, setStudentPassword,
+        currentUser, setCurrentUser
+      }}
+    >
+      {children}
+    </DataContext.Provider>
+  );
+};
+
+=== src/pages/AdminPassword.css ===
+.admin-password-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 12px;
+  background: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.admin-password-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.admin-password-form .form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-password-form label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #444;
+}
+
+.admin-password-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.update-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.update-btn:hover {
+  background-color: #0056b3;
+}
+
+.message {
+  margin-top: 15px;
+  text-align: center;
+  font-weight: bold;
+}
+
+=== src/pages/AdminPassword.jsx ===
+import React, { useState, useContext } from "react";
+import { DataContext } from "../context/DataContext";
+import "./AdminPassword.css";
+
+function AdminPassword() {
+  const { adminPassword, setAdminPassword } = useContext(DataContext);
+  const [oldPassword, setOldPassword] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (oldPassword !== adminPassword) {
+      setMessage("❌ Old password is incorrect!");
+      return;
+    }
+    if (newPassword.length < 6) {
+      setMessage("⚠️ New password must be at least 6 characters long!");
+      return;
+    }
+    if (newPassword !== confirmPassword) {
+      setMessage("❌ New password & confirm password do not match!");
+      return;
+    }
+
+    // Success
+    setAdminPassword(newPassword);
+    setMessage("✅ Password updated successfully!");
+    setOldPassword("");
+    setNewPassword("");
+    setConfirmPassword("");
+  };
+
+  return (
+    <div className="admin-password-container">
+      <h2>Change Admin Password</h2>
+      <form onSubmit={handleSubmit} className="admin-password-form">
+        <div className="form-group">
+          <label>Old Password:</label>
+          <input
+            type="password"
+            value={oldPassword}
+            onChange={(e) => setOldPassword(e.target.value)}
+            required
+          />
+        </div>
+
+        <div className="form-group">
+          <label>New Password:</label>
+          <input
+            type="password"
+            value={newPassword}
+            onChange={(e) => setNewPassword(e.target.value)}
+            required
+          />
+        </div>
+
+        <div className="form-group">
+          <label>Confirm New Password:</label>
+          <input
+            type="password"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            required
+          />
+        </div>
+
+        <button type="submit" className="update-btn">
+          Update Password
+        </button>
+      </form>
+
+      {message && <p className="message">{message}</p>}
+    </div>
+  );
+}
+
+export default AdminPassword;
+
+=== src/pages/Dashboard.css ===
+/* ========== Dashboard Styles ========== */
+.dashboard-boxes {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.dashboard-box {
+  flex: 1;
+  background-color: red;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.dashboard-box .count {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.add-student-container {
+  margin-top: 30px;
+  text-align: left;
+}
+
+.add-student-btn {
+  background-color: #28a745;
+  color: white;
+  font-size: 16px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.add-student-btn:hover {
+  background-color: #218838;
+}
+
+/* Modal Styling */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 300px;
+  text-align: center;
+}
+
+.modal-content input {
+  width: 90%;
+  padding: 8px;
+  margin: 8px 0;
+}
+
+.modal-content button {
+  margin: 5px;
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+}
+
+=== src/pages/Dashboard.jsx ===
+import React, { useContext, useState } from "react";
+import { DataContext } from "../context/DataContext";
+import "./Dashboard.css";
+
+
+function Dashboard() {
+  const { students, setStudents, subjects, classes, results, currentUser } = useContext(DataContext);
+
+  // State for form modal
+  const [showForm, setShowForm] = useState(false);
+  const [newStudent, setNewStudent] = useState({ username: "", email: "", avatar: "", password: "" });
+  const [setCustomPassword, setSetCustomPassword] = useState(false);
+
+  // Handle form input
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setNewStudent({ ...newStudent, [name]: value });
+  };
+
+  // Generate random password
+  const generatePassword = () => {
+    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    let password = "";
+    for (let i = 0; i < 8; i++) {
+      password += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    setNewStudent({ ...newStudent, password });
+  };
+
+  // Add student to context
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    let studentPassword = newStudent.password;
+    if (!setCustomPassword) {
+      // Generate password if not custom
+      const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+      studentPassword = "";
+      for (let i = 0; i < 8; i++) {
+        studentPassword += chars.charAt(Math.floor(Math.random() * chars.length));
+      }
+    }
+    if (newStudent.username && newStudent.email && studentPassword) {
+      setStudents([...students, { ...newStudent, password: studentPassword, id: Date.now() }]);
+      setNewStudent({ username: "", email: "", avatar: "", password: "" });
+      setSetCustomPassword(false);
+      setShowForm(false);
+    }
+  };
+
+  const isAdmin = currentUser?.role === "admin";
+
+  return (
+    <div>
+      <h2>📊 Dashboard</h2>
+
+      {/* Summary Boxes */}
+      <div className="dashboard-boxes">
+        <div className="dashboard-box">
+          <h3>Registered Users</h3>
+          <p className="count">{students.length}</p>
+        </div>
+        <div className="dashboard-box">
+          <h3>Subjects Listed</h3>
+          <p className="count">{subjects.length}</p>
+        </div>
+        <div className="dashboard-box">
+          <h3>Total Classes</h3>
+          <p className="count">{classes.length}</p>
+        </div>
+        <div className="dashboard-box">
+          <h3>Results Declared</h3>
+          <p className="count">{results.length}</p>
+        </div>
+      </div>
+
+      {/* Add New Student Button */}
+      {isAdmin && (
+        <div className="add-student-container">
+          <button className="add-student-btn" onClick={() => setShowForm(true)}>
+             Add New Student
+          </button>
+        </div>
+      )}
+
+      {/* Form Modal */}
+      {showForm && isAdmin && (
+        <div className="modal">
+          <div className="modal-content">
+            <h3>Add New Student</h3>
+            <form onSubmit={handleSubmit}>
+              <input
+                type="text"
+                name="username"
+                placeholder="Enter Username"
+                value={newStudent.username}
+                onChange={handleChange}
+                required
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Enter Email"
+                value={newStudent.email}
+                onChange={handleChange}
+                required
+              />
+              <input
+                type="text"
+                name="avatar"
+                placeholder="Avatar URL (optional)"
+                value={newStudent.avatar}
+                onChange={handleChange}
+              />
+              {setCustomPassword && (
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="Enter Password"
+                  value={newStudent.password}
+                  onChange={handleChange}
+                  required
+                />
+              )}
+              <label>
+                <input
+                  type="checkbox"
+                  checked={setCustomPassword}
+                  onChange={(e) => setSetCustomPassword(e.target.checked)}
+                />
+                Set Custom Password
+              </label>
+              {!setCustomPassword && (
+                <button type="button" onClick={generatePassword}>
+                  Generate Password
+                </button>
+              )}
+              <button type="submit">Add Student</button>
+              <button type="button" onClick={() => setShowForm(false)}>
+                Cancel
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default Dashboard;
+
+=== src/pages/Login.css ===
+/* Login.css */
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f5f7fa;
+  font-family: Arial, sans-serif;
+}
+
+.role-selection, 
+.login-form {
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  text-align: center;
+  width: 350px;
+}
+
+.role-selection h2,
+.login-form h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.role-selection button,
+.login-form button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #4cafef;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.role-selection button:hover,
+.login-form button:hover {
+  background: #399fd9;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.back-btn {
+  margin-top: 15px;
+  background: #e74c3c !important;
+}
+
+.back-btn:hover {
+  background: #c0392b !important;
+}
+
+=== src/pages/Login.jsx ===
+import React, { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { DataContext } from "../context/DataContext";
+import "./Login.css";
+
+function Login() {
+  const { students, setCurrentUser, adminPassword } = useContext(DataContext);
+
+  const defaultAdmin = { username: "admin", password: adminPassword };
+
+  const [role, setRole] = useState(null); // "student" | "admin" | null
+  const [formData, setFormData] = useState({ username: "", password: "" });
+  const navigate = useNavigate();
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (role === "admin") {
+      if (
+        formData.username === defaultAdmin.username &&
+        formData.password === defaultAdmin.password
+      ) {
+        setCurrentUser({ role: "admin", username: defaultAdmin.username });
+        alert("✅ Admin login successful!");
+        navigate("/"); // Dashboard
+      } else {
+        alert("❌ Invalid Admin credentials!");
+      }
+    } else if (role === "student") {
+      const student = students.find(
+        (s) =>
+          s.username === formData.username || s.email === formData.username
+      );
+
+      if (student) {
+        if (formData.password === student.password) {
+          setCurrentUser({
+            role: "student",
+            username: student.username,
+            email: student.email,
+            id: student.id,
+          });
+          alert(`✅ Welcome, ${student.username}!`);
+          navigate("/"); // student dashboard (use same dashboard or create new)
+        } else {
+          alert("❌ Incorrect student password!");
+        }
+      } else {
+        alert("❌ Student not found!");
+      }
+    }
+  };
+
+  return (
+    <div className="login-container">
+      {!role ? (
+        <div className="role-selection">
+          <h2>Select Login Type</h2>
+          <button onClick={() => setRole("student")}>Student Login</button>
+          <button onClick={() => setRole("admin")}>Admin Login</button>
+        </div>
+      ) : (
+        <div className="login-form">
+          <h2>{role === "admin" ? "Admin Login" : "Student Login"}</h2>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              name="username"
+              placeholder={
+                role === "student"
+                  ? "Enter Username or Email"
+                  : "Enter Admin Username"
+              }
+              value={formData.username}
+              onChange={handleChange}
+              required
+            />
+            <input
+              type="password"
+              name="password"
+              placeholder="Enter Password"
+              value={formData.password}
+              onChange={handleChange}
+              required
+            />
+            <button type="submit">Login</button>
+          </form>
+          <button className="back-btn" onClick={() => setRole(null)}>
+            ⬅ Back
+          </button>
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default Login;
+
+=== src/pages/Profile.css ===
+.profile-container {
+  padding: 20px;
+}
+
+.profile-card {
+  background: #f5f5f5;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 400px;
+}
+
+=== src/pages/Profile.jsx ===
+import React, { useContext } from "react";
+import { DataContext } from "../context/DataContext";
+import "./Profile.css";
+
+function Profile() {
+  const { currentUser, students, results } = useContext(DataContext);
+
+  if (!currentUser) {
+    return <p>Please login to view your profile.</p>;
+  }
+
+  const currentStudent =
+    currentUser.role === "student"
+      ? students.find((s) => s.id === currentUser.id || s.username === currentUser.username)
+      : null;
+
+  const studentResults = currentStudent
+    ? results.filter((res) => res.student === currentStudent.username)
+    : [];
+
+  const subjectCount = new Set(studentResults.map((res) => res.subject)).size;
+  const totalMarks = studentResults.reduce((sum, res) => sum + Number(res.marks || 0), 0);
+  const averageMark = studentResults.length ? (totalMarks / studentResults.length).toFixed(1) : "-";
+
+  return (
+    <div className="profile-container">
+      <h2>Profile</h2>
+
+      <div className="profile-card">
+        {currentStudent && (
+          <div className="profile-avatar">
+            <img
+              src={currentStudent.avatar || "https://via.placeholder.com/100x100?text=Avatar"}
+              alt={`${currentStudent.username}'s avatar`}
+              width="100"
+              height="100"
+              style={{ borderRadius: "50%", objectFit: "cover" }}
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = "https://via.placeholder.com/100x100?text=Avatar";
+              }}
+            />
+          </div>
+        )}
+        <p><strong>Username:</strong> {currentUser.username || "Admin"}</p>
+        <p><strong>Email:</strong> {currentUser.email || (currentStudent && currentStudent.email) || "-"}</p>
+        <p><strong>Role:</strong> {currentUser.role || "Admin"}</p>
+        {currentStudent && <p><strong>Student ID:</strong> {currentStudent.id}</p>}
+      </div>
+
+      {currentStudent && (
+        <div className="student-profile-details">
+          <h3>My Academic Details</h3>
+          <p><strong>Total Subjects:</strong> {subjectCount}</p>
+          <p><strong>Results Recorded:</strong> {studentResults.length}</p>
+          <p><strong>Average Marks:</strong> {averageMark}</p>
+
+          {studentResults.length > 0 ? (
+            <table className="profile-results-table">
+              <thead>
+                <tr>
+                  <th>Subject</th>
+                  <th>Marks</th>
+                </tr>
+              </thead>
+              <tbody>
+                {studentResults.map((result) => (
+                  <tr key={result.id}>
+                    <td>{result.subject}</td>
+                    <td>{result.marks}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          ) : (
+            <p>No subjects or marks recorded yet.</p>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default Profile;
+
+=== src/pages/Result.css ===
+.result-container {
+  padding: 20px;
+}
+
+.result-form {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.result-form select,
+.result-form input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  min-width: 150px;
+}
+
+.result-form button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+}
+
+.result-form button:hover {
+  background-color: #45a049;
+}
+
+.result-list {
+  list-style: none;
+  padding: 0;
+}
+
+.result-item {
+  display: flex;
+  justify-content: space-between;
+  background: #f9f9f9;
+  margin: 6px 0;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.result-item button {
+  margin-left: 6px;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.result-item button:first-of-type {
+  background-color: #2196f3;
+  color: white;
+}
+
+.result-item button:first-of-type:hover {
+  background-color: #1976d2;
+}
+
+.result-item button:last-of-type {
+  background-color: #f44336;
+  color: white;
+}
+
+.result-item button:last-of-type:hover {
+  background-color: #d32f2f;
+}
+
+=== src/pages/Result.jsx ===
+import React, { useContext, useState } from "react";
+import { DataContext } from "../context/DataContext";
+import "./Result.css";
+
+function Result() {
+  const { results, setResults, students, subjects } = useContext(DataContext);
+
+  // State
+  const [newResult, setNewResult] = useState({ student: "", subject: "", marks: "" });
+  const [isEditing, setIsEditing] = useState(false);
+  const [currentResultId, setCurrentResultId] = useState(null);
+
+  // Handle input change
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setNewResult({ ...newResult, [name]: value });
+  };
+
+  // Add Result
+  const handleAdd = (e) => {
+    e.preventDefault();
+    if (newResult.student && newResult.subject && newResult.marks) {
+      setResults([...results, { ...newResult, id: Date.now() }]);
+      setNewResult({ student: "", subject: "", marks: "" });
+    }
+  };
+
+  // Edit Result
+  const handleEdit = (res) => {
+    setIsEditing(true);
+    setCurrentResultId(res.id);
+    setNewResult({ student: res.student, subject: res.subject, marks: res.marks });
+  };
+
+  // Update Result
+  const handleUpdate = (e) => {
+    e.preventDefault();
+    setResults(
+      results.map((res) =>
+        res.id === currentResultId ? { ...res, ...newResult } : res
+      )
+    );
+    setIsEditing(false);
+    setNewResult({ student: "", subject: "", marks: "" });
+    setCurrentResultId(null);
+  };
+
+  // Delete Result
+  const handleDelete = (id) => {
+    setResults(results.filter((res) => res.id !== id));
+  };
+
+  return (
+    <div className="result-container">
+      <h2>📑 Manage Results</h2>
+
+      {/* Add / Edit Form */}
+      <form onSubmit={isEditing ? handleUpdate : handleAdd} className="result-form">
+        <select
+          name="student"
+          value={newResult.student}
+          onChange={handleChange}
+          required
+        >
+          <option value="">Select Student</option>
+          {students.map((stu) => (
+            <option key={stu.id} value={stu.username}>
+              {stu.username}
+            </option>
+          ))}
+        </select>
+
+        <select
+          name="subject"
+          value={newResult.subject}
+          onChange={handleChange}
+          required
+        >
+          <option value="">Select Subject</option>
+          {subjects.map((sub) => (
+            <option key={sub.id} value={sub.name}>
+              {sub.name}
+            </option>
+          ))}
+        </select>
+
+        <input
+          type="number"
+          name="marks"
+          placeholder="Enter Marks"
+          value={newResult.marks}
+          onChange={handleChange}
+          required
+        />
+
+        <button type="submit">{isEditing ? "Update Result" : "Add Result"}</button>
+        {isEditing && (
+          <button type="button" onClick={() => setIsEditing(false)}>
+            Cancel
+          </button>
+        )}
+      </form>
+
+      {/* List of Results */}
+      <ul className="result-list">
+        {results.map((res) => (
+          <li key={res.id} className="result-item">
+            <span>
+              <strong>{res.student}</strong> - {res.subject}: {res.marks} marks
+            </span>
+            <div>
+              <button onClick={() => handleEdit(res)}>Edit</button>
+              <button onClick={() => handleDelete(res.id)}>Delete</button>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default Result;
+
+=== src/pages/StudentChangePassword.css ===
+.student-password-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.student-password-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.student-password-form .form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.student-password-form label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #444;
+}
+
+.student-password-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.update-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.update-btn:hover {
+  background-color: #218838;
+}
+
+.message {
+  margin-top: 15px;
+  text-align: center;
+  font-weight: bold;
+}
+
+=== src/pages/StudentChangePassword.jsx ===
+import React, { useState, useContext } from "react";
+import { DataContext } from "../context/DataContext";
+import "./StudentChangePassword.css";
+
+function StudentChangePassword() {
+  const { students, setStudents, currentUser } = useContext(DataContext);
+  const [oldPassword, setOldPassword] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const currentStudent = students.find(s => s.id === currentUser.id);
+    if (!currentStudent) {
+      setMessage("❌ Student not found!");
+      return;
+    }
+
+    if (oldPassword !== currentStudent.password) {
+      setMessage("❌ Old password is incorrect!");
+      return;
+    }
+    if (newPassword.length < 6) {
+      setMessage("⚠️ New password must be at least 6 characters long!");
+      return;
+    }
+    if (newPassword !== confirmPassword) {
+      setMessage("❌ New password & confirm password do not match!");
+      return;
+    }
+
+    // Success
+    setStudents(students.map(s => s.id === currentUser.id ? { ...s, password: newPassword } : s));
+    setMessage("✅ Student password updated successfully!");
+    setOldPassword("");
+    setNewPassword("");
+    setConfirmPassword("");
+  };
+
+  return (
+    <div className="student-password-container">
+      <h2>Change Student Password</h2>
+      <form onSubmit={handleSubmit} className="student-password-form">
+        <div className="form-group">
+          <label>Old Password:</label>
+          <input
+            type="password"
+            value={oldPassword}
+            onChange={(e) => setOldPassword(e.target.value)}
+            required
+          />
+        </div>
+
+        <div className="form-group">
+          <label>New Password:</label>
+          <input
+            type="password"
+            value={newPassword}
+            onChange={(e) => setNewPassword(e.target.value)}
+            required
+          />
+        </div>
+
+        <div className="form-group">
+          <label>Confirm New Password:</label>
+          <input
+            type="password"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            required
+          />
+        </div>
+
+        <button type="submit" className="update-btn">
+          Update Password
+        </button>
+      </form>
+
+      {message && <p className="message">{message}</p>}
+    </div>
+  );
+}
+
+export default StudentChangePassword;
+
+=== src/pages/StudentClasses.css ===
+.classes-container {
+  padding: 20px;
+}
+
+.class-form {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.class-form input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.class-form button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+}
+
+.class-form button:hover {
+  background-color: #45a049;
+}
+
+.class-list {
+  list-style: none;
+  padding: 0;
+}
+
+.class-item {
+  display: flex;
+  justify-content: space-between;
+  background: #f9f9f9;
+  margin: 6px 0;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.class-item button {
+  margin-left: 6px;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.class-item button:first-of-type {
+  background-color: #2196f3;
+  color: white;
+}
+
+.class-item button:first-of-type:hover {
+  background-color: #1976d2;
+}
+
+.class-item button:last-of-type {
+  background-color: #f44336;
+  color: white;
+}
+
+.class-item button:last-of-type:hover {
+  background-color: #d32f2f;
+}
+
+=== src/pages/StudentClasses.jsx ===
+import React, { useContext, useState } from "react";
+import { DataContext } from "../context/DataContext";
+import "./StudentClasses.css";
+
+function StudentClasses() {
+  const { classes, setClasses } = useContext(DataContext);
+
+  // State
+  const [newClass, setNewClass] = useState({ name: "", section: "" });
+  const [isEditing, setIsEditing] = useState(false);
+  const [currentClassId, setCurrentClassId] = useState(null);
+
+  // Handle input change
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setNewClass({ ...newClass, [name]: value });
+  };
+
+  // Add Class
+  const handleAdd = (e) => {
+    e.preventDefault();
+    if (newClass.name && newClass.section) {
+      setClasses([...classes, { ...newClass, id: Date.now() }]);
+      setNewClass({ name: "", section: "" });
+    }
+  };
+
+  // Edit Class
+  const handleEdit = (cls) => {
+    setIsEditing(true);
+    setCurrentClassId(cls.id);
+    setNewClass({ name: cls.name, section: cls.section });
+  };
+
+  // Update Class
+  const handleUpdate = (e) => {
+    e.preventDefault();
+    setClasses(
+      classes.map((cls) =>
+        cls.id === currentClassId ? { ...cls, ...newClass } : cls
+      )
+    );
+    setIsEditing(false);
+    setNewClass({ name: "", section: "" });
+    setCurrentClassId(null);
+  };
+
+  // Delete Class
+  const handleDelete = (id) => {
+    setClasses(classes.filter((cls) => cls.id !== id));
+  };
+
+  return (
+    <div className="classes-container">
+      <h2>🏫 Manage Student Classes</h2>
+
+      {/* Add / Edit Form */}
+      <form onSubmit={isEditing ? handleUpdate : handleAdd} className="class-form">
+        <input
+          type="text"
+          name="name"
+          placeholder="Class Name"
+          value={newClass.name}
+          onChange={handleChange}
+          required
+        />
+        <input
+          type="text"
+          name="section"
+          placeholder="Section"
+          value={newClass.section}
+          onChange={handleChange}
+          required
+        />
+        <button type="submit">{isEditing ? "Update Class" : "Add Class"}</button>
+        {isEditing && (
+          <button type="button" onClick={() => setIsEditing(false)}>
+            Cancel
+          </button>
+        )}
+      </form>
+
+      {/* List of Classes */}
+      <ul className="class-list">
+        {classes.map((cls) => (
+          <li key={cls.id} className="class-item">
+            <span>
+              <strong>{cls.name}</strong> - Section {cls.section}
+            </span>
+            <div>
+              <button onClick={() => handleEdit(cls)}>Edit</button>
+              <button onClick={() => handleDelete(cls.id)}>Delete</button>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default StudentClasses;
+
+=== src/pages/Students.css ===
+.students-page {
+  max-width: 900px;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.add-student-form,
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.add-student-form h3,
+.modal-content h3 {
+  margin-bottom: 15px;
+}
+
+.add-student-form form,
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.add-student-form input,
+.modal-content input {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.add-btn,
+.edit-btn,
+.delete-btn,
+.bulk-delete-btn,
+.back-btn {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.add-btn {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.add-btn:hover {
+  background-color: #45a049;
+}
+
+.edit-btn {
+  background-color: #2196f3;
+  color: #fff;
+  margin-right: 5px;
+}
+
+.edit-btn:hover {
+  background-color: #1976d2;
+}
+
+.delete-btn {
+  background-color: #f44336;
+  color: #fff;
+}
+
+.delete-btn:hover {
+  background-color: #d32f2f;
+}
+
+.bulk-delete-btn {
+  background-color: #ff9800;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.bulk-delete-btn:hover {
+  background-color: #fb8c00;
+}
+
+.back-btn {
+  background-color: #9e9e9e;
+  color: #fff;
+}
+
+.back-btn:hover {
+  background-color: #757575;
+}
+
+=== src/pages/Students.jsx ===
+import React, { useContext, useState } from "react";
+import { DataContext } from "../context/DataContext";
+import { useNavigate } from "react-router-dom";
+import "./Students.css"; // Import the separate CSS file
+
+function Students() {
+  const { students, setStudents } = useContext(DataContext);
+  const navigate = useNavigate();
+
+  const [selected, setSelected] = useState([]);
+  const [isEditing, setIsEditing] = useState(false);
+  const [editStudent, setEditStudent] = useState({
+    id: null,
+    username: "",
+    email: "",
+    avatar: "",
+    avatarFile: null,
+    password: ""
+  });
+
+  const [newStudent, setNewStudent] = useState({
+    username: "",
+    email: "",
+    avatar: "",
+    avatarFile: null,
+    password: ""
+  });
+
+  const [setCustomPassword, setSetCustomPassword] = useState(false);
+
+  // ---- Selection Handlers ----
+  const toggleSelect = (id) => {
+    setSelected((prev) =>
+      prev.includes(id) ? prev.filter((sid) => sid !== id) : [...prev, id]
+    );
+  };
+
+  const toggleSelectAll = () => {
+    if (selected.length === students.length) setSelected([]);
+    else setSelected(students.map((s) => s.id));
+  };
+
+  const deleteStudent = (id) => {
+    setStudents(students.filter((s) => s.id !== id));
+    setSelected((prev) => prev.filter((sid) => sid !== id));
+  };
+
+  const deleteSelected = () => {
+    setStudents(students.filter((s) => !selected.includes(s.id)));
+    setSelected([]);
+  };
+
+  // ---- Edit Handlers ----
+  const openEdit = (student) => {
+    setEditStudent({
+      id: student.id,
+      username: student.username || "",
+      email: student.email || "",
+      avatar: student.avatar || "",
+      avatarFile: null,
+      password: student.password || ""
+    });
+    setIsEditing(true);
+  };
+
+  const handleEditChange = (e) => {
+    const { name, value } = e.target;
+    setEditStudent((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleFileChange = (e) => {
+    if (e.target.files && e.target.files[0]) {
+      const file = e.target.files[0];
+      if (editStudent.avatar && editStudent.avatar.startsWith("blob:")) {
+        URL.revokeObjectURL(editStudent.avatar);
+      }
+      const preview = URL.createObjectURL(file);
+      setEditStudent((prev) => ({
+        ...prev,
+        avatarFile: file,
+        avatar: preview,
+      }));
+    }
+  };
+
+  const handleEditSubmit = (e) => {
+    e.preventDefault();
+    setStudents((prev) =>
+      prev.map((s) =>
+        s.id === editStudent.id
+          ? {
+              ...s,
+              username: editStudent.username.trim(),
+              email: editStudent.email.trim(),
+              avatar: editStudent.avatar,
+              password: editStudent.password
+            }
+          : s
+      )
+    );
+    setIsEditing(false);
+    setEditStudent({
+      id: null,
+      username: "",
+      email: "",
+      avatar: "",
+      avatarFile: null,
+      password: ""
+    });
+  };
+
+  // ---- Add Handlers ----
+  const handleAddChange = (e) => {
+    const { name, value } = e.target;
+    setNewStudent((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleAddFileChange = (e) => {
+    if (e.target.files && e.target.files[0]) {
+      const file = e.target.files[0];
+      if (newStudent.avatar && newStudent.avatar.startsWith("blob:")) {
+        URL.revokeObjectURL(newStudent.avatar);
+      }
+      const preview = URL.createObjectURL(file);
+      setNewStudent((prev) => ({
+        ...prev,
+        avatarFile: file,
+        avatar: preview,
+      }));
+    }
+  };
+
+  const handleAddSubmit = (e) => {
+    e.preventDefault();
+    let studentPassword = newStudent.password;
+    if (!setCustomPassword) {
+      // Generate password if not custom
+      const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+      studentPassword = "";
+      for (let i = 0; i < 8; i++) {
+        studentPassword += chars.charAt(Math.floor(Math.random() * chars.length));
+      }
+    }
+    if (newStudent.username && newStudent.email && studentPassword) {
+      setStudents([...students, { ...newStudent, password: studentPassword, id: Date.now() }]);
+      setNewStudent({
+        username: "",
+        email: "",
+        avatar: "",
+        avatarFile: null,
+        password: ""
+      });
+      setSetCustomPassword(false);
+    }
+  };
+
+  return (
+    <div className="students-page">
+      <h2>Students Management</h2>
+
+      {/* Bulk Delete */}
+      {selected.length > 0 && (
+        <button className="bulk-delete-btn" onClick={deleteSelected}>
+          Delete Selected ({selected.length})
+        </button>
+      )}
+
+      {/* Students Table */}
+      <table>
+        <thead>
+          <tr>
+            <th>
+              <input
+                type="checkbox"
+                checked={selected.length === students.length && students.length > 0}
+                onChange={toggleSelectAll}
+              />
+            </th>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Avatar</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {students.map((student) => (
+            <tr key={student.id}>
+              <td>
+                <input
+                  type="checkbox"
+                  checked={selected.includes(student.id)}
+                  onChange={() => toggleSelect(student.id)}
+                />
+              </td>
+              <td>{student.id}</td>
+              <td>{student.username}</td>
+              <td>{student.email}</td>
+              <td>{student.password}</td>
+              <td>
+                {student.avatar ? (
+                  <img
+                    src={student.avatar}
+                    alt="Avatar"
+                    width="50"
+                    height="50"
+                    style={{ borderRadius: "50%", objectFit: "cover" }}
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = "https://via.placeholder.com/50x50?text=Avatar";
+                    }}
+                  />
+                ) : (
+                  "No Avatar"
+                )}
+              </td>
+              <td>
+                <button className="edit-btn" onClick={() => openEdit(student)}>
+                  Edit
+                </button>
+                <button className="delete-btn" onClick={() => deleteStudent(student.id)}>
+                  Delete
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
+      {/* Add Student Form */}
+      <div className="add-student-form">
+        <h3>Add New Student</h3>
+        <form onSubmit={handleAddSubmit}>
+          <input
+            type="text"
+            name="username"
+            placeholder="Username"
+            value={newStudent.username}
+            onChange={handleAddChange}
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            value={newStudent.email}
+            onChange={handleAddChange}
+            required
+          />
+          <input
+            type="file"
+            accept="image/*"
+            onChange={handleAddFileChange}
+          />
+          {setCustomPassword && (
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              value={newStudent.password}
+              onChange={handleAddChange}
+              required
+            />
+          )}
+          <label>
+            <input
+              type="checkbox"
+              checked={setCustomPassword}
+              onChange={(e) => setSetCustomPassword(e.target.checked)}
+            />
+            Set Custom Password
+          </label>
+          <button type="submit" className="add-btn">
+            Add Student
+          </button>
+        </form>
+      </div>
+
+      {/* Edit Modal */}
+      {isEditing && (
+        <div className="modal">
+          <div className="modal-content">
+            <h3>Edit Student</h3>
+            <form onSubmit={handleEditSubmit}>
+              <input
+                type="text"
+                name="username"
+                placeholder="Username"
+                value={editStudent.username}
+                onChange={handleEditChange}
+                required
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                value={editStudent.email}
+                onChange={handleEditChange}
+                required
+              />
+              <input
+                type="file"
+                accept="image/*"
+                onChange={handleFileChange}
+              />
+              <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                value={editStudent.password}
+                onChange={handleEditChange}
+                required
+              />
+              <button type="submit" className="edit-btn">Update</button>
+              <button type="button" className="back-btn" onClick={() => setIsEditing(false)}>
+                Cancel
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default Students;
+
+=== src/pages/Subjects.css ===
+.subjects-container {
+  padding: 20px;
+}
+
+.subjects-container h2 {
+  margin-bottom: 15px;
+}
+
+.add-subject {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.add-subject input {
+  padding: 8px;
+  flex: 1;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.add-subject button {
+  padding: 8px 16px;
+  border: none;
+  background-color: #4caf50;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-subject button:hover {
+  background-color: #45a049;
+}
+
+.subjects-list {
+  list-style: none;
+  padding: 0;
+}
+
+.subject-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f9f9f9;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.subject-item input {
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.btn-group {
+  display: flex;
+  gap: 8px;
+}
+
+.edit-btn,
+.save-btn,
+.cancel-btn,
+.delete-btn {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.edit-btn {
+  background-color: #2196f3;
+  color: white;
+}
+
+.edit-btn:hover {
+  background-color: #1976d2;
+}
+
+.save-btn {
+  background-color: #4caf50;
+  color: white;
+}
+
+.save-btn:hover {
+  background-color: #388e3c;
+}
+
+.cancel-btn {
+  background-color: #9e9e9e;
+  color: white;
+}
+
+.cancel-btn:hover {
+  background-color: #757575;
+}
+
+.delete-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #d32f2f;
+}
+
+=== src/pages/Subjects.jsx ===
+import React, { useContext, useState } from "react";
+import { DataContext } from "../context/DataContext";
+import "./Subjects.css";
+
+function Subjects() {
+  const { subjects, setSubjects } = useContext(DataContext);
+
+  const [newSubject, setNewSubject] = useState("");
+  const [editingId, setEditingId] = useState(null);
+  const [editValue, setEditValue] = useState("");
+
+  // Add subject
+  const handleAdd = () => {
+    if (newSubject.trim() === "") return;
+    const newId = subjects.length > 0 ? subjects[subjects.length - 1].id + 1 : 1;
+    setSubjects([...subjects, { id: newId, name: newSubject }]);
+    setNewSubject("");
+  };
+
+  // Delete subject
+  const handleDelete = (id) => {
+    setSubjects(subjects.filter((subject) => subject.id !== id));
+  };
+
+  // Start editing
+  const handleEdit = (id, name) => {
+    setEditingId(id);
+    setEditValue(name);
+  };
+
+  // Save edited subject
+  const handleSave = (id) => {
+    if (editValue.trim() === "") return;
+    setSubjects(
+      subjects.map((subject) =>
+        subject.id === id ? { ...subject, name: editValue } : subject
+      )
+    );
+    setEditingId(null);
+    setEditValue("");
+  };
+
+  // Cancel editing
+  const handleCancel = () => {
+    setEditingId(null);
+    setEditValue("");
+  };
+
+  return (
+    <div className="subjects-container">
+      <h2>Subjects</h2>
+
+      {/* Add Form */}
+      <div className="add-subject">
+        <input
+          type="text"
+          placeholder="Enter subject name"
+          value={newSubject}
+          onChange={(e) => setNewSubject(e.target.value)}
+        />
+        <button onClick={handleAdd}>Add</button>
+      </div>
+
+      {/* List */}
+      <ul className="subjects-list">
+        {subjects.length === 0 ? (
+          <p>No subjects available</p>
+        ) : (
+          subjects.map((subject) => (
+            <li key={subject.id} className="subject-item">
+              {editingId === subject.id ? (
+                <>
+                  <input
+                    type="text"
+                    value={editValue}
+                    onChange={(e) => setEditValue(e.target.value)}
+                  />
+                  <div className="btn-group">
+                    <button
+                      className="save-btn"
+                      onClick={() => handleSave(subject.id)}
+                    >
+                      Save
+                    </button>
+                    <button className="cancel-btn" onClick={handleCancel}>
+                      Cancel
+                    </button>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <span>{subject.name}</span>
+                  <div className="btn-group">
+                    <button
+                      className="edit-btn"
+                      onClick={() => handleEdit(subject.id, subject.name)}
+                    >
+                      Edit
+                    </button>
+                    <button
+                      className="delete-btn"
+                      onClick={() => handleDelete(subject.id)}
+                    >
+                      Delete
+                    </button>
+                  </div>
+                </>
+              )}
+            </li>
+          ))
+        )}
+      </ul>
+    </div>
+  );
+}
+
+export default Subjects;
+
+=== src/pages/WelcomePage.css ===
+.welcome-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #f5deb3, #ffe4b5);
+  color: #2c3e50;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 48px;
+  font-weight: bold;
+  text-align: center;
+  animation: fadeInOut 4s ease-in-out forwards;
+}
+
+/* Keyframes for smooth fade-in, hold, and fade-out */
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  20% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  80% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+}
+
+=== src/pages/WelcomePage.jsx ===
+import React, { useEffect, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { DataContext } from "../context/DataContext";
+import "./WelcomePage.css"; // optional for styling
+
+function WelcomePage() {
+  const navigate = useNavigate();
+  const { currentUser } = useContext(DataContext);
+
+  useEffect(() => {
+    if (currentUser) {
+      navigate("/dashboard");
+    } else {
+      const timer = setTimeout(() => {
+        navigate("/login");
+      }, 4000);
+      return () => clearTimeout(timer);
+    }
+  }, [navigate, currentUser]);
+
+  if (currentUser) {
+    return null; // or loading
+  }
+
+  return (
+    <div className="welcome-container">
+      <h1>🎓 WELCOME TO EDU TRACK PRO 🎓</h1>
+      <p>Redirecting to login...</p>
+    </div>
+  );
+}
+
+export default WelcomePage;

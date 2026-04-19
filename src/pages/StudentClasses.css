@@ -1,0 +1,69 @@
+.classes-container {
+  padding: 20px;
+}
+
+.class-form {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.class-form input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.class-form button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+}
+
+.class-form button:hover {
+  background-color: #45a049;
+}
+
+.class-list {
+  list-style: none;
+  padding: 0;
+}
+
+.class-item {
+  display: flex;
+  justify-content: space-between;
+  background: #f9f9f9;
+  margin: 6px 0;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.class-item button {
+  margin-left: 6px;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.class-item button:first-of-type {
+  background-color: #2196f3;
+  color: white;
+}
+
+.class-item button:first-of-type:hover {
+  background-color: #1976d2;
+}
+
+.class-item button:last-of-type {
+  background-color: #f44336;
+  color: white;
+}
+
+.class-item button:last-of-type:hover {
+  background-color: #d32f2f;
+}

@@ -1,0 +1,140 @@
+.students-page {
+  max-width: 900px;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.add-student-form,
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.add-student-form h3,
+.modal-content h3 {
+  margin-bottom: 15px;
+}
+
+.add-student-form form,
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.add-student-form input,
+.modal-content input {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.add-btn,
+.edit-btn,
+.delete-btn,
+.bulk-delete-btn,
+.back-btn {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.add-btn {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.add-btn:hover {
+  background-color: #45a049;
+}
+
+.edit-btn {
+  background-color: #2196f3;
+  color: #fff;
+  margin-right: 5px;
+}
+
+.edit-btn:hover {
+  background-color: #1976d2;
+}
+
+.delete-btn {
+  background-color: #f44336;
+  color: #fff;
+}
+
+.delete-btn:hover {
+  background-color: #d32f2f;
+}
+
+.bulk-delete-btn {
+  background-color: #ff9800;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.bulk-delete-btn:hover {
+  background-color: #fb8c00;
+}
+
+.back-btn {
+  background-color: #9e9e9e;
+  color: #fff;
+}
+
+.back-btn:hover {
+  background-color: #757575;
+}
+
+.students-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.students-table th,
+.students-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.students-table th {
+  background-color: #f2f2f2;
+}
+
+.students-table img {
+  display: block;
+}
+
+/* Modal styling */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  width: 400px;
+}
+
+.modal-content button {
+  margin-top: 10px;
+}

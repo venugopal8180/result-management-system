@@ -1,0 +1,64 @@
+/* Login.css */
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f5f7fa;
+  font-family: Arial, sans-serif;
+}
+
+.role-selection, 
+.login-form {
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  text-align: center;
+  width: 350px;
+}
+
+.role-selection h2,
+.login-form h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.role-selection button,
+.login-form button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #4cafef;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.role-selection button:hover,
+.login-form button:hover {
+  background: #399fd9;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.back-btn {
+  margin-top: 15px;
+  background: #e74c3c !important;
+}
+
+.back-btn:hover {
+  background: #c0392b !important;
+}
