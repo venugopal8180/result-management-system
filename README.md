@@ -1,71 +1,190 @@
-# Getting Started with Create React App
+# Result Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Live Demo:** [https://result-management-system-o3gr.onrender.com](https://result-management-system-o3gr.onrender.com)
 
-## Available Scripts
+A role-based academic management system built with React. Admins can manage students, subjects, classes, and results — while students can view their own academic profile and performance.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Admin
+- Secure admin login with password change support
+- Add, edit, and delete students (with avatar upload support)
+- Bulk delete students via checkbox selection
+- Manage subjects (add, edit, delete)
+- Manage student classes and sections
+- Record, edit, and delete student results
+- View dashboard summary (users, subjects, classes, results)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Student
+- Login with username or email
+- View personal profile with avatar
+- View academic results (subjects, marks, average)
+- Change own password
 
-### `npm test`
+### General
+- Animated welcome splash screen
+- Role-based sidebar navigation (admin sees all, student sees limited)
+- Collapsible sidebar via header minimize button
+- Settings dropdown (Profile, Change Password, Logout)
+- Notifications bell in header
+- Protected routes — redirects to login if unauthenticated
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## Project Structure
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+rmsproject/
+├── public/
+│   ├── default-avatar.png
+│   ├── index.html
+│   ├── manifest.json
+│   └── robots.txt
+│
+├── src/
+│   ├── context/
+│   │   └── DataContext.jsx       # Global state (students, subjects, classes, results, auth)
+│   │
+│   ├── pages/
+│   │   ├── WelcomePage.jsx       # Animated splash → redirects to login
+│   │   ├── Login.jsx             # Role selection + login form
+│   │   ├── Dashboard.jsx         # Summary stats + add student modal
+│   │   ├── Students.jsx          # Full student CRUD table
+│   │   ├── Subjects.jsx          # Subject management
+│   │   ├── StudentClasses.jsx    # Class & section management
+│   │   ├── Result.jsx            # Result entry and management
+│   │   ├── Profile.jsx           # User profile + academic summary
+│   │   ├── AdminPassword.jsx     # Admin password change
+│   │   └── StudentChangePassword.jsx  # Student password change
+│   │
+│   ├── App.js                    # Route definitions
+│   ├── Layout.jsx                # Shell with Header + Sidebar + Outlet
+│   ├── Header.jsx                # Top bar with settings & notifications
+│   ├── Sidebar.jsx               # Role-aware navigation links
+│   └── index.js                  # React DOM entry point
+│
+├── package.json
+└── README.md
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
+## Tech Stack
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+| Layer         | Technology                            |
+|---------------|---------------------------------------|
+| Frontend      | React 19, JSX                         |
+| Routing       | React Router DOM v7                   |
+| State         | React Context API (`DataContext`)      |
+| Charts        | Recharts                              |
+| Icons         | React Icons                           |
+| Styling       | Plain CSS (per-component files)       |
+| Build Tool    | Create React App                      |
+| Deployment    | Render                                |
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Setup & Installation
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 1. Clone the Repository
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+git clone https://github.com/your-username/rmsproject.git
+cd rmsproject
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 2. Install Dependencies
 
-## Learn More
+```bash
+npm install
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 3. Run the App
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+npm start
+```
 
-### Code Splitting
+Visit `http://localhost:3000` in your browser.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### 4. Build for Production
 
-### Analyzing the Bundle Size
+```bash
+npm run build
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## Default Login Credentials
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+| Role    | Username        | Password   |
+|---------|-----------------|------------|
+| Admin   | `admin`         | `admin123` |
+| Student | `john_doe`      | `john123`  |
+| Student | `jane_smith`    | `jane123`  |
+| Student | `bob_johnson`   | `bob123`   |
 
-### Advanced Configuration
+> Passwords are stored in-memory (React state). All data resets on page refresh. There is no backend or persistent database.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+## Page & Route Reference
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+| Route                | Page                    | Access          |
+|----------------------|-------------------------|-----------------|
+| `/`                  | Welcome splash screen   | Public          |
+| `/login`             | Login (role selection)  | Public          |
+| `/dashboard`         | Summary dashboard       | Admin + Student |
+| `/students`          | Student management      | Admin only      |
+| `/subjects`          | Subject management      | Admin only      |
+| `/student-classes`   | Class management        | Admin only      |
+| `/result`            | Result management       | Admin only      |
+| `/admin-password`    | Change admin password   | Admin only      |
+| `/student-password`  | Change student password | Student only    |
+| `/profile`           | User profile            | Admin + Student |
 
+---
 
-### `npm run build` fails to minify
+## Global State (`DataContext`)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+All app data lives in `DataContext.jsx` and is shared across components via React Context:
+
+| State           | Description                                          |
+|-----------------|------------------------------------------------------|
+| `students`      | List of all registered students                      |
+| `subjects`      | List of subjects                                     |
+| `classes`       | List of student classes and sections                 |
+| `results`       | List of results `{ student, subject, marks }`        |
+| `adminPassword` | Current admin password                               |
+| `currentUser`   | Logged-in user object `{ role, username, id }`       |
+
+---
+
+## Screenshots
+
+> _Add screenshots of the dashboard, login page, results page, and student profile here._
+
+---
+
+## Known Limitations
+
+- **No backend or database** — all data is stored in React state and resets on refresh
+- **Passwords are stored in plain text** in state (not suitable for production)
+- **No persistent sessions** — logging in again is required after page reload
+
+---
+
+## Future Improvements
+
+- Add a Node.js / Django backend with a real database
+- Implement JWT-based authentication
+- Add result charts per student using Recharts
+- Export results to PDF or Excel
+- Add email notifications for results
+
+---
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
